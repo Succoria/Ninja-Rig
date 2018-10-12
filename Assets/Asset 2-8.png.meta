@@ -1,0 +1,393 @@
+fileFormatVersion: 2
+guid: d7db5a36eb6014c99b9aebd86fec3381
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: upper head band
+    21300002: head
+    21300004: lower head band
+    21300006: L_upper arm
+    21300008: body
+    21300010: R_upper arm
+    21300012: Asset 2-8_6
+    21300014: L_lower arm
+    21300016: L_upper leg
+    21300018: R_upper leg
+    21300020: bandana knot
+    21300022: L_lower leg
+    21300024: R_lower leg
+    21300026: Asset 2-8_0
+  externalObjects: {}
+  serializedVersion: 7
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: -1
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  platformSettings:
+  - serializedVersion: 2
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  - serializedVersion: 2
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: upper head band
+      rect:
+        serializedVersion: 2
+        x: 202
+        y: 550
+        width: 162
+        height: 40
+      alignment: 9
+      pivot: {x: 0.99456596, y: 0.4581558}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eb9b711342da241d4b76a00cefcc1971
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: head
+      rect:
+        serializedVersion: 2
+        x: 440
+        y: 458
+        width: 130
+        height: 93
+      alignment: 9
+      pivot: {x: 0.49765718, y: -0.001029394}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9d402086e88d24735a0600d69a95e78d
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lower head band
+      rect:
+        serializedVersion: 2
+        x: 655
+        y: 548
+        width: 160
+        height: 45
+      alignment: 9
+      pivot: {x: 0.9967922, y: 0.10070394}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: da12ac093bff64c25bdc4b0137f77a1f
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: L_upper arm
+      rect:
+        serializedVersion: 2
+        x: 264
+        y: 372
+        width: 45
+        height: 96
+      alignment: 9
+      pivot: {x: 0.51707965, y: 0.97235936}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eec36fb81f1d94a2daf3fcedc5d04c2f
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: body
+      rect:
+        serializedVersion: 2
+        x: 453
+        y: 282
+        width: 85
+        height: 105
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 165953f783eba4aa2a92834e7578a0ad
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: R_upper arm
+      rect:
+        serializedVersion: 2
+        x: 713
+        y: 359
+        width: 44
+        height: 96
+      alignment: 9
+      pivot: {x: 0.5174685, y: 0.9483411}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cef80efc0ba1a42988655b9b87b60631
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Asset 2-8_6
+      rect:
+        serializedVersion: 2
+        x: 241
+        y: 249
+        width: 91
+        height: 67
+      alignment: 9
+      pivot: {x: 0.06925478, y: 0.1902721}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4fbaf04f6d1284b259d55d39cdcc80e9
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: L_lower arm
+      rect:
+        serializedVersion: 2
+        x: 689
+        y: 263
+        width: 92
+        height: 67
+      alignment: 9
+      pivot: {x: 0.08229131, y: 0.20174351}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 23bd18fbf825e41e788b7ec9a691d7fb
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: L_upper leg
+      rect:
+        serializedVersion: 2
+        x: 402
+        y: 184
+        width: 32
+        height: 53
+      alignment: 9
+      pivot: {x: 0.5000019, y: 0.9930541}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9047c8b55b90844fca6b92da86667639
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: R_upper leg
+      rect:
+        serializedVersion: 2
+        x: 553
+        y: 184
+        width: 32
+        height: 53
+      alignment: 9
+      pivot: {x: 0.5, y: 0.97855246}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2eae155faf55c44fc82a6f36abc23231
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bandana knot
+      rect:
+        serializedVersion: 2
+        x: 485
+        y: 133
+        width: 24
+        height: 24
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 30f2b98977c21427bbc9b627cae044b8
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: L_lower leg
+      rect:
+        serializedVersion: 2
+        x: 402
+        y: 66
+        width: 32
+        height: 53
+      alignment: 9
+      pivot: {x: 0.50000095, y: 1.0075552}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e2fd5cd333be848378f1cef8135d77c7
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: R_lower leg
+      rect:
+        serializedVersion: 2
+        x: 553
+        y: 72
+        width: 32
+        height: 52
+      alignment: 9
+      pivot: {x: 0.5, y: 1.0025363}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9dd740ed077c842da8d06f17da378a27
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Asset 2-8_0
+      rect:
+        serializedVersion: 2
+        x: 372
+        y: 534
+        width: 7
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a3f184e5423fc4181ac7d26d7b5ca5ee
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 759e18f38461e4d7284bc0faf7aee4ec
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
