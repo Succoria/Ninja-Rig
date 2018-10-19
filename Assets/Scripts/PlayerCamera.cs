@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using Player;
+using Playerctlr;
 public class PlayerCamera : MonoBehaviour {
 
 	public GameObject player;

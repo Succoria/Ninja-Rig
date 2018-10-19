@@ -2,16 +2,15 @@
 using System.Collections.Generic;
 //using HUD;
 using UnityEngine;
+using Rewired;
 
-namespace Player
+namespace Playerctlr
 {
 
 	public class PlayerController : MonoBehaviour
 	{
 
 		public static PlayerController _playercontroller;
-
-		private GameObject player;
 
 		Rigidbody2D rb;
 		public float RayD = 0.25f;
@@ -32,6 +31,8 @@ namespace Player
 		public GameObject health;
 		//UIHUD _ui;
 		int _hp = 2;
+        Player _input;
+        public int playerID;
 
 		private void Awake ()
 		{
@@ -45,8 +46,8 @@ namespace Player
 			FlipScale = GetComponent<Transform> ();
 			shoot = false;
 			canShoot = true;
-			Instantiate (cam, sp.transform.position, transform.rotation);
-
+			//Instantiate (cam, sp.transform.position, transform.rotation);
+            _input = ReInput.players.GetPlayer(playerID);
 		}
 
 		void FixedUpdate ()
@@ -79,18 +80,20 @@ namespace Player
 		}
 		void Update ()
 		{
-			float hInput = Input.GetAxis ("Horizontal") * moveMultiplier;
-			bool jInput = Input.GetButtonDown ("Jump");
-			shoot = Input.GetButton ("Fire1");
+			float hInput = _input.GetAxis ("Horizontal");
+			if (hInput != 0) Debug.Log(playerID + ": " + hInput);
+			bool jInput = _input.GetButtonDown ("Leap");
+			shoot = _input.GetButton ("Shoot");
 			Move (hInput);
-			Jump (jInput);
+			Leap (jInput);
 			Shoot (shoot);
 
 		}
-		void Jump (bool jInput)
+		void Leap (bool jInput)
 		{
 			if (jInput && jumpCount < 2)
 			{
+				Debug.Log("isJumping");
 				rb.velocity = new Vector2 (0, jumpHeight);
 				anim.SetBool ("Jump", true);
 				jumpCount++;
@@ -104,7 +107,8 @@ namespace Player
 		{
 			if (hInput != 0)
 			{
-				rb.velocity = new Vector2 (hInput, rb.velocity.y);
+				rb.velocity = new Vector2 (hInput * moveMultiplier * Time.deltaTime, rb.velocity.y);
+				Debug.Log(playerID + " vel: " + rb.velocity);
 				anim.SetFloat ("Speed", hInput);
 				if (hInput > 0)
 				{
@@ -137,10 +141,10 @@ namespace Player
 		}
 		void Shoot (bool shoot)
 		{
-
-			anim.SetBool ("shoot", shoot);
+			anim.SetBool ("Fire1", shoot);
 			if (shoot)
 			{
+				Debug.Log("shoot");
 				StartCoroutine (RateOfFire ());
 			}
 
