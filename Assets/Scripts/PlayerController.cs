@@ -83,6 +83,7 @@ namespace Playerctlr
 			float hInput = _input.GetAxis ("Horizontal");
 			if (hInput != 0) Debug.Log(playerID + ": " + hInput);
 			bool jInput = _input.GetButtonDown ("Leap");
+			if (jInput) Debug.Log("Jump: " + jInput);
 			shoot = _input.GetButton ("Shoot");
 			Move (hInput);
 			Leap (jInput);
