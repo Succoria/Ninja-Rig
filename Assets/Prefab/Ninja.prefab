@@ -58,6 +58,21 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!1 &1158216115681084
+GameObject:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4882555888710112}
+  m_Layer: 0
+  m_Name: HoldPoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 4422084297763085224, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!1 &1207358442221618
 GameObject:
   m_ObjectHideFlags: 1
@@ -85,6 +100,7 @@ GameObject:
   - component: {fileID: 95916692201138950}
   - component: {fileID: 70457251099722670}
   - component: {fileID: 114673219952537486}
+  - component: {fileID: 114713117456254508}
   - component: {fileID: 50471107404046282}
   m_Layer: 0
   m_Name: Ninja
@@ -385,7 +401,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1409089054458292}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 1.45, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4060370443733406}
@@ -393,6 +409,7 @@ Transform:
   - {fileID: 4823389698658224}
   - {fileID: 4544538305170442}
   - {fileID: 4392639878837262}
+  - {fileID: 4882555888710112}
   m_Father: {fileID: 4169111519689042}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -507,6 +524,19 @@ Transform:
   m_Father: {fileID: 4685876757025220}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 39.737003}
+--- !u!4 &4882555888710112
+Transform:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1158216115681084}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 2.27, y: 0.3, z: -0.0703125}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4570403976728426}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4922125179320848
 Transform:
   m_ObjectHideFlags: 1
@@ -552,7 +582,7 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.09491962, y: -0.037967682}
+  m_Offset: {x: 0.09491962, y: 1.5}
   m_Size: {x: 1.2213911, y: 3.0502663}
   m_Direction: 0
 --- !u!95 &95916692201138950
@@ -585,7 +615,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   RayD: 0.25
-  moveMultiplier: 250
+  moveMultiplier: 700
   jumpHeight: 10
   layer:
     serializedVersion: 2
@@ -597,6 +627,24 @@ MonoBehaviour:
   cam: {fileID: 0}
   health: {fileID: 0}
   playerID: 0
+--- !u!114 &114713117456254508
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1257198317442758}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6d2971f55c646844d993ab27c3fb5bfd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  grabbed: 0
+  distance: 2
+  holdpoint: {fileID: 4882555888710112}
+  throwforce: 30
+  notgrabbed:
+    serializedVersion: 2
+    m_Bits: 0
 --- !u!212 &212115199236804762
 SpriteRenderer:
   m_ObjectHideFlags: 1

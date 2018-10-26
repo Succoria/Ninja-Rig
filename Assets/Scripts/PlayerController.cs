@@ -1,8 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 //using HUD;
-using UnityEngine;
 using Rewired;
+using UnityEngine;
 
 namespace Playerctlr
 {
@@ -31,8 +31,8 @@ namespace Playerctlr
 		public GameObject health;
 		//UIHUD _ui;
 		int _hp = 2;
-        Player _input;
-        public int playerID;
+		Player _input;
+		public int playerID;
 
 		private void Awake ()
 		{
@@ -47,19 +47,19 @@ namespace Playerctlr
 			shoot = false;
 			canShoot = true;
 			//Instantiate (cam, sp.transform.position, transform.rotation);
-            _input = ReInput.players.GetPlayer(playerID);
+			_input = ReInput.players.GetPlayer (playerID);
 		}
 
 		void FixedUpdate ()
 		{
 
 			// Visualising raycast
-			if (drawRays == true)
+			//if (drawRays == true)
 			{
 				Debug.DrawRay (transform.position, Vector2.down * RayD, Color.green, 1);
 			}
 			//Raycast for ground
-			RaycastHit2D hit = Physics2D.Raycast (transform.position, Vector2.down, RayD, layer);
+			RaycastHit2D hit = Physics2D.Raycast (transform.position + (transform.up * 0.01f), Vector2.down, RayD, layer);
 			if (hit.collider != null)
 			{
 				grounded = true;
@@ -73,7 +73,7 @@ namespace Playerctlr
 			}
 			else
 			{
-				grounded = false;
+				//grounded = false;
 				anim.SetBool ("falling", true);
 				anim.SetBool ("grounded", grounded);
 			}
@@ -81,9 +81,9 @@ namespace Playerctlr
 		void Update ()
 		{
 			float hInput = _input.GetAxis ("Horizontal");
-			if (hInput != 0) Debug.Log(playerID + ": " + hInput);
+			if (hInput != 0) Debug.Log (playerID + ": " + hInput);
 			bool jInput = _input.GetButtonDown ("Leap");
-			if (jInput) Debug.Log("Jump: " + jInput);
+			if (jInput) Debug.Log ("Jump: " + jInput);
 			shoot = _input.GetButton ("Shoot");
 			Move (hInput);
 			Leap (jInput);
@@ -92,9 +92,9 @@ namespace Playerctlr
 		}
 		void Leap (bool jInput)
 		{
-			if (jInput && jumpCount < 2)
+			if (jInput && jumpCount < 10)
 			{
-				Debug.Log("isJumping");
+				Debug.Log ("isJumping");
 				rb.velocity = new Vector2 (0, jumpHeight);
 				anim.SetBool ("Jump", true);
 				jumpCount++;
@@ -109,7 +109,7 @@ namespace Playerctlr
 			if (hInput != 0)
 			{
 				rb.velocity = new Vector2 (hInput * moveMultiplier * Time.deltaTime, rb.velocity.y);
-				Debug.Log(playerID + " vel: " + rb.velocity);
+				Debug.Log (playerID + " vel: " + rb.velocity);
 				anim.SetFloat ("Speed", hInput);
 				if (hInput > 0)
 				{
@@ -145,7 +145,7 @@ namespace Playerctlr
 			anim.SetBool ("Fire1", shoot);
 			if (shoot)
 			{
-				Debug.Log("shoot");
+				Debug.Log ("shoot");
 				StartCoroutine (RateOfFire ());
 			}
 

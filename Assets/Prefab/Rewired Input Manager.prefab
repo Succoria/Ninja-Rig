@@ -259,6 +259,15 @@ MonoBehaviour:
       _behaviorId: 0
       _userAssignable: 1
       _categoryId: 3
+    - _id: 3
+      _name: Throw
+      _type: 1
+      _descriptiveName: Action0
+      _positiveDescriptiveName: 
+      _negativeDescriptiveName: 
+      _behaviorId: 0
+      _userAssignable: 1
+      _categoryId: 5
     actionCategories:
     - _name: Default
       _descriptiveName: Default
@@ -280,6 +289,11 @@ MonoBehaviour:
       _tag: 
       _id: 3
       _userAssignable: 1
+    - _name: Throw
+      _descriptiveName: Category0
+      _tag: 
+      _id: 5
+      _userAssignable: 1
     actionCategoryMap:
       list:
       - categoryId: 0
@@ -290,6 +304,8 @@ MonoBehaviour:
         actionIds: 01000000
       - categoryId: 3
         actionIds: 02000000
+      - categoryId: 5
+        actionIds: 03000000
     inputBehaviors:
     - _id: 0
       _name: Default
@@ -424,7 +440,7 @@ MonoBehaviour:
         _modifierKey2: 0
         _modifierKey3: 0
       - _actionCategoryId: 0
-        _actionId: -1
+        _actionId: 3
         _elementType: 1
         _elementIdentifierId: 7
         _axisRange: 0
@@ -604,8 +620,8 @@ MonoBehaviour:
     customControllerMaps: []
     customControllers: []
     playerIdCounter: 5
-    actionIdCounter: 3
-    actionCategoryIdCounter: 5
+    actionIdCounter: 4
+    actionCategoryIdCounter: 6
     inputBehaviorIdCounter: 1
     mapCategoryIdCounter: 1
     joystickLayoutIdCounter: 1
