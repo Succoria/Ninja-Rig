@@ -6,6 +6,8 @@ TagManager:
   tags:
   - FogOfWar
   - Grabbable
+  - destroy
+  - wall
   layers:
   - Default
   - TransparentFX

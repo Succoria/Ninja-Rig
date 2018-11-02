@@ -1,14 +1,17 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using Playerctlr;
-public class PlayerCamera : MonoBehaviour {
+//using Playerctlr;
+public class PlayerCamera : MonoBehaviour
+{
 
 	public GameObject player;
-	private void Awake() {
+	private void Awake ()
+	{
 		player = PlayerController._playercontroller.gameObject;
 	}
-	void Update () {
+	void Update ()
+	{
 		transform.position = new Vector3 (player.transform.position.x, 0, 0);
 	}
 }

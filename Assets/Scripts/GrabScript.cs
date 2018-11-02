@@ -12,6 +12,8 @@ public class GrabScript : MonoBehaviour
 	public float throwforce;
 	public LayerMask notgrabbed;
 
+	private GameObject Ograbbed;
+
 	Player _input;
 	public int _playerID;
 
@@ -35,6 +37,8 @@ public class GrabScript : MonoBehaviour
 				if (hit.collider != null && hit.collider.tag == "Grabbable")
 				{
 					grabbed = true;
+					Ograbbed = hit.collider.gameObject;
+					Debug.Log (Ograbbed);
 
 				}
 
@@ -48,6 +52,8 @@ public class GrabScript : MonoBehaviour
 				{
 
 					hit.collider.gameObject.GetComponent<Rigidbody2D> ().velocity = new Vector2 (transform.localScale.x, 0) * throwforce;
+					Ograbbed = hit.collider.gameObject;
+					Ograbbed.GetComponent<MovingProj> ().MovingProjectile ();
 				}
 
 			}

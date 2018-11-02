@@ -90,7 +90,7 @@ LightmapSettings:
     m_PVRFilteringAtrousPositionSigmaAO: 1
     m_ShowResolutionOverlay: 1
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 0
+  m_UseShadowmask: 1
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -595,7 +595,7 @@ GameObject:
   - component: {fileID: 593550011}
   m_Layer: 0
   m_Name: Cube (2)
-  m_TagString: Untagged
+  m_TagString: wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -828,6 +828,11 @@ Prefab:
     - target: {fileID: 114673219952537486, guid: aca3d052ae333f944a1d8771082574f5,
         type: 2}
       propertyPath: playerID
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114713117456254508, guid: aca3d052ae333f944a1d8771082574f5,
+        type: 2}
+      propertyPath: _playerID
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -1282,11 +1287,6 @@ Prefab:
       propertyPath: m_Name
       value: WrenchPickUp (1)
       objectReference: {fileID: 0}
-    - target: {fileID: 50074108408432314, guid: 88214b362b7efc4418c73ef3681ba1fb,
-        type: 2}
-      propertyPath: m_BodyType
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 88214b362b7efc4418c73ef3681ba1fb, type: 2}
   m_IsPrefabAsset: 0
@@ -1447,7 +1447,7 @@ GameObject:
   - component: {fileID: 1740182295}
   m_Layer: 0
   m_Name: Cube (1)
-  m_TagString: Untagged
+  m_TagString: wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
