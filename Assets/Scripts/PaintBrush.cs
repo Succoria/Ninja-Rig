@@ -10,7 +10,9 @@ public class PaintBrush : MonoBehaviour
     public float brushSize;
     public Texture2D brushTexture;
     public Texture2D alpha;
+    public RenderTexture RT;
     Vector2 stored;
+    public Material fog;
     public static Dictionary<Collider, RenderTexture> paintTextures = new Dictionary<Collider, RenderTexture>();
 
     void Start()
@@ -36,8 +38,11 @@ public class PaintBrush : MonoBehaviour
                 {
                     Debug.Log("Draw");
                     Renderer rend = hit.transform.GetComponent<Renderer>();
-                   paintTextures.Add(coll, getWhiteRT());
-                    rend.material.SetTexture("_PaintMap", paintTextures[coll]);
+                    paintTextures.Add(coll, GetWhiteRT());
+                    // Graphics.CopyTexture(paintTextures[coll], tex); 
+                    fog.SetTexture("_Paint_map", GetWhiteRT());
+                   
+                   //rend.material.SetTexture("_PaintMap", paintTextures[coll]);
                 }
                 if (stored != hit.lightmapCoord) // stop drawing on the same point
                 {
@@ -46,6 +51,8 @@ public class PaintBrush : MonoBehaviour
                     Vector2 pixelUV = hit.lightmapCoord;
                     pixelUV.y *= resolution;
                     pixelUV.x *= resolution;
+                    //pixelUV.x = -pixelUV.x;
+                
                     DrawTexture(paintTextures[coll], pixelUV.x, pixelUV.y);
                 }
             }
@@ -67,11 +74,11 @@ public class PaintBrush : MonoBehaviour
 
     }
 
-    RenderTexture getWhiteRT()
+    RenderTexture GetWhiteRT()
     {
-        RenderTexture rt = new RenderTexture(resolution, resolution, 32);
-        Graphics.Blit(whiteMap, rt);
-        return rt;
+        //RenderTexture RT = new RenderTexture(resolution, resolution, 32);//
+        Graphics.Blit(whiteMap, RT);
+        return RT;
     }
 
     void CreateClearTexture()
