@@ -29,44 +29,44 @@ public class PaintBrushO : MonoBehaviour
 
     void Update ()
     {
-        if (fActive == true)
+        // if (fActive == true)
+        //{
+        cPos = transform.position;
+        cPos.z = -12;
+        Debug.DrawRay (cPos, Vector3.forward * 20f, Color.magenta);
+        RaycastHit hit;
+        if (Physics.Raycast (cPos, Vector3.forward, out hit))
+        //if (Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out hit)) // delete previous and uncomment for mouse painting
         {
-            cPos = transform.position;
-            cPos.z = -12;
-            Debug.DrawRay (cPos, Vector3.forward * 20f, Color.magenta);
-            RaycastHit hit;
-            if (Physics.Raycast (transform.position, Vector3.forward, out hit))
-            //if (Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out hit)) // delete previous and uncomment for mouse painting
+            Debug.Log ("raycast hit");
+            Collider coll = hit.collider;
+            if (coll != null && fActive == true)
             {
-                Debug.Log ("raycast hit");
-                Collider coll = hit.collider;
-                if (coll != null)
+                // Debug.Log("raycast hit after if");
+                if (!paintTextures.ContainsKey (coll)) // if there is already paint on the material, add to that
                 {
-                    // Debug.Log("raycast hit after if");
-                    if (!paintTextures.ContainsKey (coll)) // if there is already paint on the material, add to that
-                    {
-                        Debug.Log ("Draw");
-                        Renderer rend = hit.transform.GetComponent<Renderer> ();
-                        paintTextures.Add (coll, GetWhiteRT ());
-                        // Graphics.CopyTexture(paintTextures[coll], tex); 
-                        fog.SetTexture ("_Paint_map", GetWhiteRT ());
+                    Debug.Log ("Draw");
+                    Renderer rend = hit.transform.GetComponent<Renderer> ();
+                    paintTextures.Add (coll, GetWhiteRT ());
+                    // Graphics.CopyTexture(paintTextures[coll], tex); 
+                    fog.SetTexture ("_Paint_map", GetWhiteRT ());
 
-                        //rend.material.SetTexture("_PaintMap", paintTextures[coll]);
-                    }
-                    if (stored != hit.lightmapCoord) // stop drawing on the same point
-                    {
-                        stored = hit.lightmapCoord;
-                        Debug.Log (stored);
-                        Vector2 pixelUV = hit.lightmapCoord;
-                        pixelUV.y *= resolution;
-                        pixelUV.x *= resolution;
-                        //pixelUV.x = -pixelUV.x;
+                    //rend.material.SetTexture("_PaintMap", paintTextures[coll]);
+                }
+                if (stored != hit.lightmapCoord) // stop drawing on the same point
+                {
+                    stored = hit.lightmapCoord;
+                    Debug.Log (stored);
+                    Vector2 pixelUV = hit.lightmapCoord;
+                    pixelUV.y *= resolution;
+                    pixelUV.x *= resolution;
+                    //pixelUV.x = -pixelUV.x;
 
-                        DrawTexture (paintTextures[coll], pixelUV.x, pixelUV.y);
-                    }
+                    DrawTexture (paintTextures[coll], pixelUV.x, pixelUV.y);
                 }
             }
         }
+        //}
     }
 
     void DrawTexture (RenderTexture rt, float posX, float posY)
