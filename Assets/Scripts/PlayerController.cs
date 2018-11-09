@@ -99,6 +99,10 @@ public class PlayerController : MonoBehaviour
 		Move (hInput);
 		Leap (jInput);
 		Shoot (shoot);
+		if (health == 0)
+		{
+			Destroy (gameObject);
+		}
 
 	}
 	void Leap (bool jInput)
@@ -144,6 +148,7 @@ public class PlayerController : MonoBehaviour
 				pveloc = pveloc * -1;
 				health = health - (10 + pveloc);
 				BAirT = false;
+
 			}
 			else
 			{
