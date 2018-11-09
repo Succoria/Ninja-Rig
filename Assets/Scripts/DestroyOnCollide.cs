@@ -37,6 +37,7 @@ public class DestroyOnCollide : MonoBehaviour
 		if (other.gameObject.tag == "destroy")
 		{
 			gameObject.GetComponent<PlayerController> ().Airhit = true;
+			gameObject.GetComponent<PlayerController> ().BAirT = false;
 
 		}
 	}

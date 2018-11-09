@@ -104,7 +104,7 @@ public class PlayerController : MonoBehaviour
 			Move (hInput);
 			Leap (jInput);
 			Shoot (shoot);
-			if (health == 0)
+			if (health == 0 || health < 0)
 			{
 				Destroy (gameObject);
 				Application.LoadLevel (Application.loadedLevel);
@@ -180,6 +180,13 @@ public class PlayerController : MonoBehaviour
 				//_ui.LooseLife ();
 			}
 		}
+
+		if (other.transform.tag == "destroy")
+		{
+			health = health - 10;
+			pveloc = other.transform.GetComponent<Rigidbody2D> ().velocity.x;
+			BAirT = true;
+		}
 	}
 	void Shoot (bool shoot)
 	{
@@ -222,6 +229,17 @@ public class PlayerController : MonoBehaviour
 			{
 				yield return null;
 			}
+		}
+
+	}
+
+	void OnCollisionExit2D (Collision2D other)
+	{
+		if (other.transform.tag == "destroy")
+		{
+			pveloc = 0;
+			BAirT = false;
+
 		}
 
 	}

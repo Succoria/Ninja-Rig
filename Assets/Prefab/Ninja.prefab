@@ -20,7 +20,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4834076448313510}
   - component: {fileID: 212115199236804762}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: lower head band
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -35,7 +35,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4682971442842486}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Spawn Point
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -51,7 +51,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4392639878837262}
   - component: {fileID: 212947984650613900}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: R_upper leg
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -66,7 +66,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4882555888710112}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: HoldPoint
   m_TagString: Untagged
   m_Icon: {fileID: 4422084297763085224, guid: 0000000000000000d000000000000000, type: 0}
@@ -82,7 +82,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4292187080073004}
   - component: {fileID: 212826425482323552}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: L_lower arm
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -103,7 +103,7 @@ GameObject:
   - component: {fileID: 114713117456254508}
   - component: {fileID: 114108305416193938}
   - component: {fileID: 50471107404046282}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Ninja
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -118,7 +118,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4644816320607174}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Spawn Point
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -134,7 +134,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4922125179320848}
   - component: {fileID: 212901845176158176}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: upper head band
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -150,7 +150,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4570403976728426}
   - component: {fileID: 212822370568035542}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: body
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -166,7 +166,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4544538305170442}
   - component: {fileID: 212395915983929628}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: L_upper leg
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -182,7 +182,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4045349830978652}
   - component: {fileID: 212150774181407886}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: R_lower leg
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -198,7 +198,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4685876757025220}
   - component: {fileID: 212649428765138988}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: bandana knot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -214,7 +214,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4781575892502246}
   - component: {fileID: 212972261934257276}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: L_lower leg
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -230,7 +230,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4060370443733406}
   - component: {fileID: 212561183621577302}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: head
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -246,7 +246,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4618566988310440}
   - component: {fileID: 212610963338591594}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: R_lower arm
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -262,7 +262,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4734499096575648}
   - component: {fileID: 212569866751539706}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: L_upper arm
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -278,7 +278,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4823389698658224}
   - component: {fileID: 212136063463825252}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: R_upper arm
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -293,7 +293,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4216914763649114}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Spawn Point
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -568,8 +568,8 @@ Rigidbody2D:
   m_GravityScale: 1
   m_Material: {fileID: 0}
   m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_SleepingMode: 0
+  m_CollisionDetection: 1
   m_Constraints: 4
 --- !u!70 &70457251099722670
 CapsuleCollider2D:
@@ -615,6 +615,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5ec12af5ba50fa3438a35834328dd9ee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Cobject: {fileID: 0}
+  Bveloc: 0
 --- !u!114 &114673219952537486
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -637,8 +639,11 @@ MonoBehaviour:
   sp: {fileID: 1966900988204684}
   rof: 0.3
   cam: {fileID: 0}
-  health: {fileID: 0}
+  health: NaN
+  Airhit: 0
+  BAirT: 0
   playerID: 0
+  pveloc: 0
 --- !u!114 &114713117456254508
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -653,7 +658,7 @@ MonoBehaviour:
   grabbed: 0
   distance: 2
   holdpoint: {fileID: 4882555888710112}
-  throwforce: 30
+  throwforce: 50
   notgrabbed:
     serializedVersion: 2
     m_Bits: 0

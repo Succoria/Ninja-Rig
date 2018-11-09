@@ -25,7 +25,7 @@ GameObject:
   - component: {fileID: 61533616300487710}
   - component: {fileID: 114525840242245864}
   - component: {fileID: 114708487998484598}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: WrenchPickUp
   m_TagString: Grabbable
   m_Icon: {fileID: 0}
@@ -41,7 +41,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4704496285240702}
   - component: {fileID: 58407131271291534}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: DamageCollider
   m_TagString: Grabbable
   m_Icon: {fileID: -964228994112308473, guid: 0000000000000000d000000000000000, type: 0}
@@ -55,7 +55,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1336540435863968}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 25.1, y: 3.9, z: 0.0030268482}
+  m_LocalPosition: {x: 25.1, y: 3.9, z: 0}
   m_LocalScale: {x: 1.4787, y: 1.4787, z: 1.4787}
   m_Children:
   - {fileID: 4704496285240702}
@@ -88,13 +88,13 @@ Rigidbody2D:
   m_UseAutoMass: 0
   m_Mass: 1
   m_LinearDrag: 0
-  m_AngularDrag: 0.05
+  m_AngularDrag: 0
   m_GravityScale: 0
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 2
+  m_CollisionDetection: 1
+  m_Constraints: 6
 --- !u!58 &58407131271291534
 CircleCollider2D:
   m_ObjectHideFlags: 1
