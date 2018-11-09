@@ -177,7 +177,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1336540435863968}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fe3366507da035542b70cd16376dc146, type: 3}
   m_Name: 
@@ -185,7 +185,7 @@ MonoBehaviour:
   resolution: 512
   whiteMap: {fileID: 2800000, guid: ce6291f25a10753479cc7b2cd6c3cc15, type: 3}
   tex: {fileID: 0}
-  brushSize: 3
+  brushSize: 3.5
   brushTexture: {fileID: 2800000, guid: 98cdedbad69b11746adf0be37292e5c9, type: 3}
   alpha: {fileID: 0}
   RT: {fileID: 8400000, guid: e8f67db5069239242a4029ea0eb4659e, type: 2}

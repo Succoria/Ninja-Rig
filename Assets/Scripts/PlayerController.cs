@@ -42,10 +42,13 @@ public class PlayerController : MonoBehaviour
 
 	public float pveloc;
 
+	private bool aMove;
+
 	private void Awake ()
 	{
 		_playercontroller = this;
 		health = 100;
+		aMove = true;
 
 		//_ui = UIHUD.ui;
 	}
@@ -91,17 +94,22 @@ public class PlayerController : MonoBehaviour
 	}
 	void Update ()
 	{
-		float hInput = _input.GetAxis ("Horizontal");
-		//if (hInput != 0) Debug.Log (playerID + ": " + hInput);
-		bool jInput = _input.GetButtonDown ("Leap");
-		//if (jInput) Debug.Log ("Jump: " + jInput);
-		shoot = _input.GetButton ("Shoot");
-		Move (hInput);
-		Leap (jInput);
-		Shoot (shoot);
-		if (health == 0)
+		if (BAirT == false)
 		{
-			Destroy (gameObject);
+			float hInput = _input.GetAxis ("Horizontal");
+			//if (hInput != 0) Debug.Log (playerID + ": " + hInput);
+			bool jInput = _input.GetButtonDown ("Leap");
+			//if (jInput) Debug.Log ("Jump: " + jInput);
+			shoot = _input.GetButton ("Shoot");
+			Move (hInput);
+			Leap (jInput);
+			Shoot (shoot);
+			if (health == 0)
+			{
+				Destroy (gameObject);
+				Application.LoadLevel (Application.loadedLevel);
+
+			}
 		}
 
 	}

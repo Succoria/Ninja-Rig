@@ -40,16 +40,16 @@ public class PaintBrushO : MonoBehaviour
         {
             Debug.Log ("raycast hit");
             Collider coll = hit.collider;
-            if (coll != null && fActive == true)
+            if (coll != null)
             {
                 // Debug.Log("raycast hit after if");
                 if (!paintTextures.ContainsKey (coll)) // if there is already paint on the material, add to that
                 {
                     Debug.Log ("Draw");
                     Renderer rend = hit.transform.GetComponent<Renderer> ();
-                    paintTextures.Add (coll, GetWhiteRT ());
+                    paintTextures.Add (coll, RT);
                     // Graphics.CopyTexture(paintTextures[coll], tex); 
-                    fog.SetTexture ("_Paint_map", GetWhiteRT ());
+                    fog.SetTexture ("_Paint_map", RT);
 
                     //rend.material.SetTexture("_PaintMap", paintTextures[coll]);
                 }

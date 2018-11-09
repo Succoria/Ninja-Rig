@@ -20,7 +20,7 @@ public class MovingProj : MonoBehaviour
 	public void MovingProjectile ()
 	{
 		transform.gameObject.tag = "destroy";
-		gameObject.GetComponent<PaintBrushO> ().fActive = true;
+		gameObject.GetComponent<PaintBrushO> ().enabled = true;
 
 	}
 }
