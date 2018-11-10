@@ -144,14 +144,14 @@ public class PlayerController : MonoBehaviour
 
 			if (hInput > 0)
 			{
-				FlipScale.localScale = new Vector2 (1, 1);
+				FlipScale.localScale = new Vector2 (0.75f, 0.75f);
 				rb.velocity = new Vector2 (hInput * moveMultiplier * Time.deltaTime, rb.velocity.y);
 				//Debug.Log (playerID + " vel: " + rb.velocity);
 				anim.SetFloat ("Speed", hInput);
 			}
 			else if (hInput < 0)
 			{
-				FlipScale.localScale = new Vector2 (-1, 1);
+				FlipScale.localScale = new Vector2 (-0.75f, 0.75f);
 				rb.velocity = new Vector2 (hInput * moveMultiplier * Time.deltaTime, rb.velocity.y);
 				//Debug.Log (playerID + " vel: " + rb.velocity);
 				anim.SetFloat ("Speed", hInput);
