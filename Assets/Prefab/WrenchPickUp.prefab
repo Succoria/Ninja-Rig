@@ -48,22 +48,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!1 &1684609989988516
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 4704496285240702}
-  - component: {fileID: 58407131271291534}
-  m_Layer: 11
-  m_Name: DamageCollider
-  m_TagString: Grabbable
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
 --- !u!4 &4299068360198490
 Transform:
   m_ObjectHideFlags: 1
@@ -75,7 +59,7 @@ Transform:
   m_LocalScale: {x: 0.30894136, y: 0.30894136, z: 0.30894136}
   m_Children: []
   m_Father: {fileID: 4643169341764206}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4643169341764206
 Transform:
@@ -87,22 +71,8 @@ Transform:
   m_LocalPosition: {x: -26.2, y: 2.34, z: 0}
   m_LocalScale: {x: 1.4787, y: 1.4787, z: 1.4787}
   m_Children:
-  - {fileID: 4704496285240702}
   - {fileID: 4299068360198490}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!4 &4704496285240702
-Transform:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1684609989988516}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.11, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 4643169341764206}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!50 &50074108408432314
@@ -124,22 +94,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 1
-  m_Constraints: 2
---- !u!58 &58407131271291534
-CircleCollider2D:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1684609989988516}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  serializedVersion: 2
-  m_Radius: 1
+  m_Constraints: 6
 --- !u!61 &61485595988638518
 BoxCollider2D:
   m_ObjectHideFlags: 1
@@ -201,6 +156,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 191fd9e63584a434e86707bafb85bb0b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  cVeloc: {x: 0, y: 0}
 --- !u!114 &114708487998484598
 MonoBehaviour:
   m_ObjectHideFlags: 1

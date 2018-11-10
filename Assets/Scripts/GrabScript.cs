@@ -7,7 +7,7 @@ public class GrabScript : MonoBehaviour
 
 	public bool grabbed;
 	RaycastHit2D hit;
-	public float distance = 2f;
+	public float distance;
 	public Transform holdpoint;
 	public float throwforce;
 	public LayerMask notgrabbed;
@@ -33,7 +33,7 @@ public class GrabScript : MonoBehaviour
 
 		posP = transform.position.y + 2;
 		posPV.x = transform.position.x;
-		posPV.y = transform.position.y + 2;
+		posPV.y = transform.position.y + 1;
 
 		if (_input.GetButtonDown ("Throw"))
 		{
@@ -42,13 +42,14 @@ public class GrabScript : MonoBehaviour
 				Physics2D.queriesStartInColliders = false;
 
 				hit = Physics2D.Raycast (posPV, Vector2.right * transform.localScale.x, distance);
-
+				Debug.DrawRay (posPV, Vector2.right * transform.localScale.x, Color.green, distance);
 				if (hit.collider != null && hit.collider.tag == "Grabbable")
 				{
 					grabbed = true;
 					Ograbbed = hit.collider.gameObject;
 					Debug.Log (Ograbbed);
 					Ograbbed.GetComponent<Rigidbody2D> ().bodyType = RigidbodyType2D.Static;
+					Ograbbed.layer = 13;
 
 				}
 
@@ -67,6 +68,7 @@ public class GrabScript : MonoBehaviour
 					Ograbbed = hit.collider.gameObject;
 					Ograbbed.tag = "destroy";
 					Ograbbed.GetComponent<MovingProj> ().MovingProjectile ();
+					Ograbbed = null;
 				}
 
 			}

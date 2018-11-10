@@ -10,6 +10,7 @@ TagManager:
   - wall
   - PickUpDetection
   - ground
+  - brokenwall
   layers:
   - Default
   - TransparentFX
@@ -24,7 +25,7 @@ TagManager:
   - PickUp
   - Grab
   - ground
-  - 
+  - Inhand
   - 
   - 
   - 
