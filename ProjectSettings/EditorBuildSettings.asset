@@ -17,4 +17,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Josh_SmashOut.unity
     guid: f3ab466e47b4ea84ea03276cf4e24ead
+  - enabled: 1
+    path: Assets/Scenes/End Game Screen.unity
+    guid: 58c7220f8172c3d49b32acd725d55b6c
   m_configObjects: {}
