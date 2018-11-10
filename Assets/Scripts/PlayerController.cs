@@ -30,6 +30,8 @@ public class PlayerController : MonoBehaviour
 	public GameObject cam;
 	public float health;
 	public bool Airhit;
+
+	private float xmoving;
 	public bool BAirT;
 	//UIHUD _ui;
 	int _hp = 2;
@@ -87,6 +89,7 @@ public class PlayerController : MonoBehaviour
 			grounded = true;
 			anim.SetBool ("grounded", grounded);
 			anim.SetBool ("falling", false);
+			anim.SetBool ("isJumping", true);
 			if (rb.velocity.y <= 0.001f)
 			{
 				anim.SetBool ("Jump", false);
@@ -98,10 +101,16 @@ public class PlayerController : MonoBehaviour
 			grounded = false;
 			anim.SetBool ("falling", true);
 			anim.SetBool ("grounded", grounded);
+			anim.SetBool ("isJumping", true);
 		}
 	}
 	void Update ()
 	{
+		xmoving = gameObject.GetComponent<Rigidbody2D> ().velocity.x;
+		if ((xmoving > -1 && xmoving < 1) && (BAirT == true))
+		{
+			BAirT = false;
+		}
 
 		if (BAirT == false)
 		{
@@ -115,10 +124,14 @@ public class PlayerController : MonoBehaviour
 			Shoot (shoot);
 			if (health == 0 || health < 0)
 			{
-				Destroy (gameObject);
-				Application.LoadLevel (Application.loadedLevel);
+				anim.SetBool ("isDead", true);
 
 			}
+		}
+
+		if (BAirT == true && gameObject.GetComponent<Rigidbody2D> ().velocity.x < 1)
+		{
+			BAirT = false;
 		}
 
 	}
@@ -128,12 +141,11 @@ public class PlayerController : MonoBehaviour
 		{
 			//Debug.Log ("isJumping");
 			rb.velocity = new Vector2 (0, jumpHeight);
-			anim.SetBool ("Jump", true);
 			jumpCount++;
 		}
-		if (rb.velocity.y < 0 && grounded == false)
+		if (grounded == true)
 		{
-			anim.SetBool ("falling", true);
+			anim.SetBool ("isJumping", false);
 		}
 	}
 	void Move (float hInput)
@@ -147,19 +159,20 @@ public class PlayerController : MonoBehaviour
 				FlipScale.localScale = new Vector2 (0.75f, 0.75f);
 				rb.velocity = new Vector2 (hInput * moveMultiplier * Time.deltaTime, rb.velocity.y);
 				//Debug.Log (playerID + " vel: " + rb.velocity);
-				anim.SetFloat ("Speed", hInput);
+				anim.SetBool ("isRunning", true);
 			}
 			else if (hInput < 0)
 			{
 				FlipScale.localScale = new Vector2 (-0.75f, 0.75f);
 				rb.velocity = new Vector2 (hInput * moveMultiplier * Time.deltaTime, rb.velocity.y);
 				//Debug.Log (playerID + " vel: " + rb.velocity);
-				anim.SetFloat ("Speed", hInput);
+				anim.SetBool ("isRunning", true);
 			}
 		}
 		else
 		{
 			rb.velocity = new Vector2 (0, rb.velocity.y);
+			anim.SetBool ("isRunning", false);
 		}
 
 	}
@@ -260,11 +273,21 @@ public class PlayerController : MonoBehaviour
 	{
 		if (other.transform.tag == "destroy")
 		{
+			//Destroy (other.gameObject);
+
 			pveloc = 0;
 			BAirT = false;
 
 		}
 
+	}
+
+	private void OnCollisionStay2D (Collision2D other)
+	{
+		if (other.transform.tag == "destroy" && BAirT == false)
+		{
+			Destroy (other.gameObject);
+		}
 	}
 
 }

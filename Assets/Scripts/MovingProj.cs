@@ -24,11 +24,16 @@ public class MovingProj : MonoBehaviour
 			}
 		}
 
+		if (gameObject.tag == "destroy" && gameObject.GetComponent<Rigidbody2D> ().velocity.x == 0)
+		{
+			Destroy (gameObject);
+		}
+
 	}
 
 	public void OnCollisionEnter2D (Collision2D other)
 	{
-		if (other.collider.tag == "brokenwall")
+		if (other.collider.tag == "player")
 		{
 			//Destroy (gameObject);
 		}
