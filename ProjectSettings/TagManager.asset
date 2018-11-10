@@ -8,6 +8,8 @@ TagManager:
   - Grabbable
   - destroy
   - wall
+  - PickUpDetection
+  - ground
   layers:
   - Default
   - TransparentFX
@@ -19,9 +21,9 @@ TagManager:
   - 
   - Player
   - Proj
-  - 
+  - PickUp
   - Grab
-  - 
+  - ground
   - 
   - 
   - 

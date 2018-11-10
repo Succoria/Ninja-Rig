@@ -12,10 +12,13 @@ public class GrabScript : MonoBehaviour
 	public float throwforce;
 	public LayerMask notgrabbed;
 
-	private GameObject Ograbbed;
+	public GameObject Ograbbed;
+	private float posP;
 
 	Player _input;
 	public int _playerID;
+
+	private Vector2 posPV;
 
 	// Use this for initialization
 	void Start ()
@@ -25,14 +28,20 @@ public class GrabScript : MonoBehaviour
 
 	// Update is called once per frame
 	void Update ()
+
 	{
+
+		posP = transform.position.y + 2;
+		posPV.x = transform.position.x;
+		posPV.y = transform.position.y + 2;
+
 		if (_input.GetButtonDown ("Throw"))
 		{
 			if (!grabbed)
 			{
 				Physics2D.queriesStartInColliders = false;
 
-				hit = Physics2D.Raycast (transform.position, Vector2.right * transform.localScale.x, distance);
+				hit = Physics2D.Raycast (posPV, Vector2.right * transform.localScale.x, distance);
 
 				if (hit.collider != null && hit.collider.tag == "Grabbable")
 				{
@@ -78,6 +87,11 @@ public class GrabScript : MonoBehaviour
 	{
 		Gizmos.color = Color.green;
 
-		Gizmos.DrawLine (transform.position, transform.position + Vector3.right * transform.localScale.x * distance);
+		Gizmos.DrawLine (posPV, posPV + Vector2.right * transform.localScale.x * distance);
+	}
+
+	public void Pickupitem ()
+	{
+
 	}
 }

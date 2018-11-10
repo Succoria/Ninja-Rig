@@ -16,11 +16,11 @@ public class PlayerController : MonoBehaviour
 	public float RayD = 0.25f;
 	public float moveMultiplier = 1f;
 	public float jumpHeight = 4f;
-	bool grounded = true;
+	public bool grounded = true;
 	public LayerMask layer;
 	Transform FlipScale;
 	Animator anim;
-	int jumpCount = 0;
+	public int jumpCount = 0;
 	bool shoot = false;
 	public bool drawRays;
 	public GameObject peashot;
@@ -43,6 +43,8 @@ public class PlayerController : MonoBehaviour
 	public float pveloc;
 
 	private bool aMove;
+
+	RaycastHit2D hit;
 
 	private void Awake ()
 	{
@@ -69,13 +71,19 @@ public class PlayerController : MonoBehaviour
 
 		// Visualising raycast
 		//if (drawRays == true)
-		{
-			Debug.DrawRay (transform.position, Vector2.down * RayD, Color.green, 1);
-		}
+		//{
+		//	Debug.DrawRay (transform.position, Vector2.down * RayD, Color.green, 1);
+		//}
 		//Raycast for ground
-		RaycastHit2D hit = Physics2D.Raycast (transform.position + (transform.up * 0.01f), Vector2.down, RayD, layer);
-		if (hit.collider != null)
+		Physics2D.queriesStartInColliders = false;
+		hit = Physics2D.Raycast (transform.position, Vector2.down, RayD);
+
+		//RaycastHit2D hit = Physics2D.Raycast (transform.position, Vector2.down, RayD);
+		Debug.DrawRay (transform.position, Vector2.down * RayD, Color.green, 1);
+		//Debug.Log (hit);
+		if (hit.collider != null && hit.collider.tag == "ground")
 		{
+			Debug.Log (hit);
 			grounded = true;
 			anim.SetBool ("grounded", grounded);
 			anim.SetBool ("falling", false);
@@ -85,15 +93,16 @@ public class PlayerController : MonoBehaviour
 				jumpCount = 0;
 			}
 		}
-		else
+		else if (hit.collider == null)
 		{
-			//grounded = false;
+			grounded = false;
 			anim.SetBool ("falling", true);
 			anim.SetBool ("grounded", grounded);
 		}
 	}
 	void Update ()
 	{
+
 		if (BAirT == false)
 		{
 			float hInput = _input.GetAxis ("Horizontal");
@@ -131,19 +140,28 @@ public class PlayerController : MonoBehaviour
 	{
 		if (hInput != 0)
 		{
-			rb.velocity = new Vector2 (hInput * moveMultiplier * Time.deltaTime, rb.velocity.y);
-			//Debug.Log (playerID + " vel: " + rb.velocity);
-			anim.SetFloat ("Speed", hInput);
+			//Debug.Log (hInput);
+
 			if (hInput > 0)
 			{
 				FlipScale.localScale = new Vector2 (1, 1);
-
+				rb.velocity = new Vector2 (hInput * moveMultiplier * Time.deltaTime, rb.velocity.y);
+				//Debug.Log (playerID + " vel: " + rb.velocity);
+				anim.SetFloat ("Speed", hInput);
 			}
 			else if (hInput < 0)
 			{
 				FlipScale.localScale = new Vector2 (-1, 1);
+				rb.velocity = new Vector2 (hInput * moveMultiplier * Time.deltaTime, rb.velocity.y);
+				//Debug.Log (playerID + " vel: " + rb.velocity);
+				anim.SetFloat ("Speed", hInput);
 			}
 		}
+		else
+		{
+			rb.velocity = new Vector2 (0, rb.velocity.y);
+		}
+
 	}
 	void OnCollisionEnter2D (Collision2D other)
 	{
