@@ -19,7 +19,8 @@ public class MovingProj : MonoBehaviour
 		{
 			if (gameObject.GetComponent<Rigidbody2D> ().velocity.x == 0)
 			{
-				//Destroy (gameObject);
+				gameObject.tag = "Grabbable";
+				gameObject.layer = 11;
 			}
 		}
 

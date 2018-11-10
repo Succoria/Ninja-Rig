@@ -199,11 +199,16 @@ public class PlayerController : MonoBehaviour
 			}
 		}
 
-		if (other.transform.tag == "destroy")
+		if ((other.transform.tag == "destroy") && other.gameObject != gameObject.GetComponent<GrabScript> ().Ograbbed)
 		{
 			health = health - 10;
 			pveloc = other.transform.GetComponent<Rigidbody2D> ().velocity.x;
 			BAirT = true;
+		}
+
+		if (other.transform.tag == "DangerWall")
+		{
+			health = health - 5;
 		}
 	}
 	void Shoot (bool shoot)

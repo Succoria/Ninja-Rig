@@ -205,7 +205,7 @@ Prefab:
     - target: {fileID: 50593645061368466, guid: 57c6be57a4390fc4f9395f3ecdd0761a,
         type: 2}
       propertyPath: m_BodyType
-      value: 2
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 57c6be57a4390fc4f9395f3ecdd0761a, type: 2}
@@ -256,7 +256,7 @@ Prefab:
     - target: {fileID: 50593645061368466, guid: 57c6be57a4390fc4f9395f3ecdd0761a,
         type: 2}
       propertyPath: m_SleepingMode
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 50593645061368466, guid: 57c6be57a4390fc4f9395f3ecdd0761a,
         type: 2}
@@ -1684,8 +1684,7 @@ Prefab:
       propertyPath: m_CollisionDetection
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 114108305416193938, guid: aca3d052ae333f944a1d8771082574f5,
-        type: 2}
+    - target: {fileID: 0}
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
@@ -3626,7 +3625,8 @@ Prefab:
       propertyPath: m_LocalScale.z
       value: 0.75
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 0}
   m_SourcePrefab: {fileID: 100100000, guid: aca3d052ae333f944a1d8771082574f5, type: 2}
   m_IsPrefabAsset: 0
 --- !u!4 &1348275268 stripped
@@ -4386,7 +4386,7 @@ Prefab:
     - target: {fileID: 50593645061368466, guid: 57c6be57a4390fc4f9395f3ecdd0761a,
         type: 2}
       propertyPath: m_BodyType
-      value: 2
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 57c6be57a4390fc4f9395f3ecdd0761a, type: 2}
@@ -4729,7 +4729,7 @@ Prefab:
     - target: {fileID: 50593645061368466, guid: 57c6be57a4390fc4f9395f3ecdd0761a,
         type: 2}
       propertyPath: m_BodyType
-      value: 2
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 57c6be57a4390fc4f9395f3ecdd0761a, type: 2}

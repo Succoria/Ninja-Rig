@@ -49,7 +49,7 @@ public class GrabScript : MonoBehaviour
 					Ograbbed = hit.collider.gameObject;
 					Debug.Log (Ograbbed);
 					Ograbbed.GetComponent<Rigidbody2D> ().bodyType = RigidbodyType2D.Static;
-					Ograbbed.layer = 13;
+					//Ograbbed.layer = 13;
 
 				}
 
@@ -68,7 +68,7 @@ public class GrabScript : MonoBehaviour
 					Ograbbed = hit.collider.gameObject;
 					Ograbbed.tag = "destroy";
 					Ograbbed.GetComponent<MovingProj> ().MovingProjectile ();
-					Ograbbed = null;
+					//Ograbbed = null;
 				}
 
 			}

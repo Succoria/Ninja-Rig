@@ -11,6 +11,7 @@ TagManager:
   - PickUpDetection
   - ground
   - brokenwall
+  - DangerWall
   layers:
   - Default
   - TransparentFX

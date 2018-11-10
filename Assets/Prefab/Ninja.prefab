@@ -117,7 +117,6 @@ GameObject:
   - component: {fileID: 70457251099722670}
   - component: {fileID: 114673219952537486}
   - component: {fileID: 114713117456254508}
-  - component: {fileID: 114108305416193938}
   - component: {fileID: 50471107404046282}
   m_Layer: 8
   m_Name: Ninja
@@ -649,19 +648,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &114108305416193938
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1257198317442758}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5ec12af5ba50fa3438a35834328dd9ee, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Cobject: {fileID: 0}
-  Bveloc: 0
 --- !u!114 &114673219952537486
 MonoBehaviour:
   m_ObjectHideFlags: 1
