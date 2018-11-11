@@ -2,11 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SceneLoader : MonoBehaviour {
+public class SceneLoader : MonoBehaviour
+{
 
-
-    public void LoadScene()
-    { 
-         Application.LoadLevel("Ninja Rig");
+    public void LoadScene ()
+    {
+        Application.LoadLevel ("Final Environment");
     }
 }

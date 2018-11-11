@@ -124,8 +124,9 @@ public class PlayerController : MonoBehaviour
 			Shoot (shoot);
 			if (health == 0 || health < 0)
 			{
-				anim.SetBool ("isDead", true);
-
+				//anim.SetBool ("isDead", true);
+				GameObject.Find ("GameManager").GetComponent<EndGameCheck> ().PlayerDeath ();
+				Destroy (gameObject);
 			}
 		}
 
@@ -214,14 +215,14 @@ public class PlayerController : MonoBehaviour
 
 		if ((other.transform.tag == "destroy") && other.gameObject != gameObject.GetComponent<GrabScript> ().Ograbbed)
 		{
-			health = health - 10;
+			health = health - 20;
 			pveloc = other.transform.GetComponent<Rigidbody2D> ().velocity.x;
 			BAirT = true;
 		}
 
 		if (other.transform.tag == "DangerWall")
 		{
-			health = health - 5;
+			health = health - 10;
 		}
 	}
 	void Shoot (bool shoot)
@@ -269,6 +270,15 @@ public class PlayerController : MonoBehaviour
 
 	}
 
+	IEnumerator Dying ()
+	{
+		while (true)
+		{
+			yield return new WaitForSeconds (3);
+			Destroy (gameObject);
+		}
+	}
+
 	void OnCollisionExit2D (Collision2D other)
 	{
 		if (other.transform.tag == "destroy")
@@ -286,7 +296,7 @@ public class PlayerController : MonoBehaviour
 	{
 		if (other.transform.tag == "destroy" && BAirT == false)
 		{
-			Destroy (other.gameObject);
+			//Destroy (other.gameObject);
 		}
 	}
 

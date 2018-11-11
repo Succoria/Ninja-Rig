@@ -17,7 +17,7 @@ public class MovingProj : MonoBehaviour
 
 		if (gameObject.layer == 9)
 		{
-			if (gameObject.GetComponent<Rigidbody2D> ().velocity.x == 0)
+			if (gameObject.GetComponent<Rigidbody2D> ().velocity.x < 1 && gameObject.GetComponent<Rigidbody2D> ().velocity.x > -1)
 			{
 				gameObject.tag = "Grabbable";
 				gameObject.layer = 11;
@@ -26,7 +26,7 @@ public class MovingProj : MonoBehaviour
 
 		if (gameObject.tag == "destroy" && gameObject.GetComponent<Rigidbody2D> ().velocity.x == 0)
 		{
-			Destroy (gameObject);
+			//	Destroy (gameObject);
 		}
 
 	}

@@ -25,20 +25,25 @@ public class WallDestroy : MonoBehaviour
 		xspeed = gameObject.GetComponent<Rigidbody2D> ().velocity.x;
 		yspeed = gameObject.GetComponent<Rigidbody2D> ().velocity.y;
 
-		if (xspeed > 10 || xspeed < -10)
+		if (xspeed > 20 || xspeed < -20)
 		{
 			gameObject.tag = "DangerWall";
 
 		}
 
-		if (yspeed > 10 || yspeed < -10)
+		if (yspeed > 20 || yspeed < -20)
 		{
 			gameObject.tag = "DangerWall";
 		}
 
-		if (xspeed < 10 && xspeed > -10 && yspeed < 10 && yspeed > -10)
+		if (xspeed < 20 && xspeed > -20 && yspeed < 20 && yspeed > -20)
 		{
 			gameObject.tag = "brokenwall";
+		}
+
+		if (gameObject.tag == "brokenwall")
+		{
+			//gameObject.GetComponent<Rigidbody2D> ().mass = 20;
 		}
 	}
 
@@ -65,7 +70,7 @@ public class WallDestroy : MonoBehaviour
 			projVeloc = proj.gameObject.GetComponent<MovingProj> ().cVeloc;
 			//gameObject.GetComponent<Rigidbody2D> ().WakeUp ();
 			Moving = true;
-			gameObject.GetComponent<Rigidbody2D> ().AddForce (projVeloc * 200, ForceMode2D.Impulse);
+			gameObject.GetComponent<Rigidbody2D> ().AddForce (projVeloc * 30, ForceMode2D.Impulse);
 		}
 
 	}

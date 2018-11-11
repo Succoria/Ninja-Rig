@@ -12,11 +12,8 @@ EditorBuildSettings:
     path: Assets/Scenes/Main Menu.unity
     guid: d5aa5b5c34d107c44af606164695194b
   - enabled: 1
-    path: Assets/Scenes/Ninja Rig.unity
-    guid: fae94c32926254cacac7cd512a815e65
-  - enabled: 1
-    path: Assets/Scenes/Josh_SmashOut.unity
-    guid: f3ab466e47b4ea84ea03276cf4e24ead
+    path: Assets/Scenes/Final Environment.unity
+    guid: 066263566afb62d47a6bc89807739ebe
   - enabled: 1
     path: Assets/Scenes/End Game Screen.unity
     guid: 58c7220f8172c3d49b32acd725d55b6c
